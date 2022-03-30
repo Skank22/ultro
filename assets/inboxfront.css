@@ -20792,7 +20792,7 @@ md-step-body {
   margin: 0 0 15px;
 }
 .dashboard-page .row-panels > div {
-  border-radius: 5px;
+  border-radius: 2px;
   margin: 0 15px;
   box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.08);
   text-align: center;
@@ -28621,7 +28621,7 @@ md-autocomplete {
 }
 .tag-input-wrapper .tag-item.shopify {
   background-color: green !important;
-  color: white;
+  color: white !important;
   cursor: default;
 }
 .tag-input-wrapper .tag-dropdown {
@@ -33601,9 +33601,9 @@ md-checkbox.md-checked .md-icon {
   margin-left: 5px;
 }
 .tabs-message .item-user-chat .lock-icon, .tabs-message .item-user-chat .unlock-icon {
-  height: 15px;
+  height: 20px;
   margin-right: 5px;
-  width: 15px;
+  width: 20px;
 }
 .tabs-message .item-user-chat .icon-status-user {
   background: #656a72;
@@ -33755,6 +33755,10 @@ md-checkbox.md-checked .md-icon {
   position: absolute;
   right: 10px;
   top: 8px;
+}
+.visitor-info .delete-user .svg-icon, .team-info .delete-user .svg-icon, .user-info .delete-user .svg-icon {
+  height: 20px;
+  width: 20px;
 }
 .visitor-info .list-member .item-member, .team-info .list-member .item-member, .user-info .list-member .item-member {
   margin-bottom: 7px;
@@ -36594,6 +36598,8 @@ md-checkbox.md-checked .md-icon {
   margin-right: 20px;
 }
 .widget-settings .form .title-form {
+  color: #121416;
+  font-weight: 500;
   margin: 0 0 15px;
 }
 .widget-settings .form .title-form:not(:first-child) {
@@ -36788,9 +36794,9 @@ md-checkbox.md-checked .md-icon {
 }
 .widget-settings .form .cp-Panel {
   background: #f9f9f9;
-  border-radius: 5px;
+  border-radius: 2px;
   border: 1px solid #dadada;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.08);
   padding: 0 40px 0 70px;
   margin-bottom: 8px;
 }
