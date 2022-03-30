@@ -84,20 +84,20 @@ ul {
   padding: 0 29px;
 }
 .page-header .wrapper-user-popup .user-name {
-  color: #5D5E64;
+  color: #121416;
   margin-bottom: 5px;
+  font-size: 15px;
 }
 .page-header .wrapper-user-popup .user-status-text {
-  font-size: 11px;
+  font-size: 13px;
 }
 .page-header .wrapper-user-popup .menu-icon {
-  width: 16px;
-  height: 16px;
-  margin: 0 12px;
+  width: 20px;
+  height: 20px;
+  margin: 0 8px;
   fill: #989a9f;
 }
 .page-header .wrapper-user-popup .apps-popup-menu {
-  font-size: 13px;
   margin-top: 10px;
 }
 .page-header .wrapper-user-popup .apps-popup-menu ul li {

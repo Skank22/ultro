@@ -58377,7 +58377,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("inboxfront/app")["default"].create({"name":"inboxfront","version":"0.0.0+6819411a"});
+            require("inboxfront/app")["default"].create({"name":"inboxfront","version":"0.0.0+21334b9b"});
           }
         
 //# sourceMappingURL=inboxfront.map
