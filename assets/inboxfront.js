@@ -8774,6 +8774,25 @@
     value: true
   });
   _exports.default = void 0;
+
+  function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+  function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+  function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+  function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+  function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+  function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+  function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+  function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+  function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
   var KEY_CODES = {
     BACKSPACE: 8,
     COMMA: 188,
@@ -8792,7 +8811,7 @@
 
       this._super.apply(this, arguments);
 
-      this.tags = [];
+      this.arrayColors = ['#e8f9f5', '#fef9e2', '#fdecee', '#e4f2fd'];
       this.ajax.query(_query.default.TAGS).then(function (tags) {
         _this.set('copyTags', tags);
 
@@ -8800,6 +8819,14 @@
 
         if (typeof _this.get('selectedTags') === 'undefined') {
           _this.showSelectedTags();
+        } else {
+          var arr = _toConsumableArray(_this.get('selectedTags')).map(function (item) {
+            return _objectSpread(_objectSpread({}, item), {}, {
+              color: _this.get('arrayColors')[Math.floor(Math.random() * _this.get('arrayColors').length)]
+            });
+          });
+
+          _this.set('selectedTags', arr);
         }
       });
     },
@@ -8823,7 +8850,7 @@
         var newTags = [];
 
         if (e.which === KEY_CODES.COMMA || e.which === KEY_CODES.SPACE || e.which === KEY_CODES.ENTER) {
-          if (newTag.length > 0) {
+          if (newTag.length > 0 && newTag.length < 11) {
             this.addTag(newTag);
           }
 
@@ -8883,6 +8910,8 @@
             return obj.tag !== tag;
           });
 
+          result.tag.color = _this3.get('arrayColors')[Math.floor(Math.random() * _this3.get('arrayColors').length)];
+
           _this3.get('selectedTags').pushObject(result.tag);
 
           _this3.set('copyTags', tags);
@@ -8911,6 +8940,12 @@
           appLabel: this.get('label') || 'message'
         };
         this.ajax.query(_query.default.SELECTED_TAGS, 'tag', hash).then(function (result) {
+          result.map(function (item) {
+            return _objectSpread(_objectSpread({}, item), {}, {
+              color: _this4.get('arrayColors')[Math.floor(Math.random() * _this4.get('arrayColors').length)]
+            });
+          });
+
           _this4.set('selectedTags', result);
 
           var _loop = function _loop(i) {
@@ -55953,8 +55988,8 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "wfSJ5g0x",
-    "block": "{\"symbols\":[\"item\",\"item\"],\"statements\":[[4,\"click-outside\",null,[[\"action\"],[[28,\"action\",[[23,0,[]],\"onclickOutside\"],null]]],{\"statements\":[[0,\"    \"],[7,\"div\",true],[10,\"class\",\"tag-input-wrapper\"],[8],[0,\"\\n        \"],[7,\"ul\",true],[10,\"class\",\"selected-tags\"],[8],[0,\"\\n\"],[4,\"each\",[[24,[\"selectedTags\"]]],null,{\"statements\":[[0,\"                \"],[7,\"li\",true],[11,\"class\",[29,[\"tag-item \",[28,\"if\",[[28,\"eq\",[[23,2,[\"tag\"]],\"shopify\"],null],\"shopify\",\"\"],null]]]],[11,\"onClick\",[28,\"action\",[[23,0,[]],\"removeTagItem\",[23,2,[]]],null]],[8],[0,\"\\n                    \"],[1,[23,2,[\"tag\"]],false],[0,\"\\n                \"],[9],[0,\"\\n\"]],\"parameters\":[2]},null],[4,\"if\",[[24,[\"isShowInput\"]]],null,{\"statements\":[[0,\"                \"],[7,\"li\",true],[8],[0,\"\\n                    \"],[1,[28,\"paper-input\",null,[[\"autocomplete\",\"placeholder\",\"value\",\"onChange\",\"onFocus\",\"onKeyDown\"],[false,[28,\"concat\",[\"+ \",[28,\"t\",[\"actions.add_tag\"],null]],null],[24,[\"tag\"]],[28,\"action\",[[23,0,[]],[28,\"mut\",[[24,[\"tag\"]]],null]],null],[28,\"action\",[[23,0,[]],\"onFocusInput\"],null],[28,\"action\",[[23,0,[]],\"onKeyDown\"],null]]]],false],[0,\"\\n                \"],[9],[0,\"\\n\"]],\"parameters\":[]},{\"statements\":[[0,\"                \"],[7,\"li\",true],[10,\"class\",\"add-tag\"],[11,\"onClick\",[28,\"action\",[[23,0,[]],\"showInputTag\"],null]],[8],[0,\"\\n                    \"],[1,[28,\"svg-icon\",[\"plus-circle\"],[[\"class\"],[\"plus-icon\"]]],false],[0,\"\\n                \"],[9],[0,\"\\n\"]],\"parameters\":[]}],[0,\"        \"],[9],[0,\"\\n\"],[4,\"if\",[[24,[\"isOpen\"]]],null,{\"statements\":[[0,\"            \"],[7,\"div\",true],[10,\"class\",\"tag-dropdown\"],[8],[0,\"\\n\"],[4,\"each\",[[24,[\"filteredTags\"]]],null,{\"statements\":[[0,\"                    \"],[7,\"div\",true],[11,\"onClick\",[28,\"action\",[[23,0,[]],\"selectTag\",[23,1,[]]],null]],[8],[1,[23,1,[\"tag\"]],false],[9],[0,\"\\n\"]],\"parameters\":[1]},null],[0,\"                \"],[7,\"div\",true],[11,\"onClick\",[28,\"action\",[[23,0,[]],\"createTag\",[24,[\"tag\"]]],null]],[8],[0,\"+ \"],[1,[28,\"t\",[\"actions.create_tag\"],null],false],[9],[0,\"\\n            \"],[9],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"    \"],[9],[0,\"\\n\"]],\"parameters\":[]},null]],\"hasEval\":false}",
+    "id": "TA4iv1jg",
+    "block": "{\"symbols\":[\"item\",\"item\"],\"statements\":[[4,\"click-outside\",null,[[\"action\"],[[28,\"action\",[[23,0,[]],\"onclickOutside\"],null]]],{\"statements\":[[0,\"    \"],[7,\"div\",true],[10,\"class\",\"tag-input-wrapper\"],[8],[0,\"\\n        \"],[7,\"ul\",true],[10,\"class\",\"selected-tags\"],[8],[0,\"\\n\"],[4,\"each\",[[24,[\"selectedTags\"]]],null,{\"statements\":[[0,\"                \"],[7,\"li\",true],[11,\"class\",[29,[\"tag-item \",[28,\"if\",[[28,\"eq\",[[23,2,[\"tag\"]],\"shopify\"],null],\"shopify\",\"\"],null]]]],[11,\"style\",[29,[\"background-color: \",[23,2,[\"color\"]]]]],[11,\"onClick\",[28,\"action\",[[23,0,[]],\"removeTagItem\",[23,2,[]]],null]],[8],[0,\"\\n                    \"],[1,[23,2,[\"tag\"]],false],[0,\"\\n                \"],[9],[0,\"\\n\"]],\"parameters\":[2]},null],[4,\"if\",[[24,[\"isShowInput\"]]],null,{\"statements\":[[0,\"                \"],[7,\"li\",true],[8],[0,\"\\n                    \"],[1,[28,\"paper-input\",null,[[\"autocomplete\",\"placeholder\",\"value\",\"onChange\",\"onFocus\",\"onKeyDown\"],[false,[28,\"concat\",[\"+ \",[28,\"t\",[\"actions.add_tag\"],null]],null],[24,[\"tag\"]],[28,\"action\",[[23,0,[]],[28,\"mut\",[[24,[\"tag\"]]],null]],null],[28,\"action\",[[23,0,[]],\"onFocusInput\"],null],[28,\"action\",[[23,0,[]],\"onKeyDown\"],null]]]],false],[0,\"\\n                \"],[9],[0,\"\\n\"]],\"parameters\":[]},{\"statements\":[[0,\"                \"],[7,\"li\",true],[10,\"class\",\"add-tag\"],[11,\"onClick\",[28,\"action\",[[23,0,[]],\"showInputTag\"],null]],[8],[0,\"\\n                    \"],[1,[28,\"svg-icon\",[\"plus-circle\"],[[\"class\"],[\"plus-icon\"]]],false],[0,\"\\n                \"],[9],[0,\"\\n\"]],\"parameters\":[]}],[0,\"        \"],[9],[0,\"\\n\"],[4,\"if\",[[24,[\"isOpen\"]]],null,{\"statements\":[[0,\"            \"],[7,\"div\",true],[10,\"class\",\"tag-dropdown\"],[8],[0,\"\\n\"],[4,\"each\",[[24,[\"filteredTags\"]]],null,{\"statements\":[[0,\"                    \"],[7,\"div\",true],[11,\"onClick\",[28,\"action\",[[23,0,[]],\"selectTag\",[23,1,[]]],null]],[8],[1,[23,1,[\"tag\"]],false],[9],[0,\"\\n\"]],\"parameters\":[1]},null],[0,\"                \"],[7,\"div\",true],[11,\"onClick\",[28,\"action\",[[23,0,[]],\"createTag\",[24,[\"tag\"]]],null]],[8],[0,\"+ \"],[1,[28,\"t\",[\"actions.create_tag\"],null],false],[9],[0,\"\\n            \"],[9],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"    \"],[9],[0,\"\\n\"]],\"parameters\":[]},null]],\"hasEval\":false}",
     "meta": {
       "moduleName": "inboxfront/templates/components/tags-picker.hbs"
     }

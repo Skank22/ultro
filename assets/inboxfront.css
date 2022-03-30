@@ -28611,7 +28611,7 @@ md-autocomplete {
   padding: 4px 2px;
 }
 .tag-input-wrapper .tag-item {
-  background: #ddebff;
+  background-color: #ddebff;
   border-radius: 5px;
   color: #2b78e4;
   cursor: pointer;
@@ -28620,7 +28620,7 @@ md-autocomplete {
   padding: 4px 8px;
 }
 .tag-input-wrapper .tag-item.shopify {
-  background-color: green;
+  background-color: green !important;
   color: white;
   cursor: default;
 }
