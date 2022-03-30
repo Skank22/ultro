@@ -33678,6 +33678,7 @@ md-checkbox.md-checked .md-icon {
   color: #5d5e64;
   font-size: 15px;
   font-weight: 500;
+  flex: 1;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
