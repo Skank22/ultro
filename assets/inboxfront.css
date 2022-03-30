@@ -33467,9 +33467,9 @@ md-checkbox.md-checked .md-icon {
   position: relative;
 }
 .tabs-message .wrap-search-block .search-icon {
-  height: 16px;
+  height: 20px;
   position: absolute;
-  width: 16px;
+  width: 20px;
   z-index: 1;
   left: 7px;
 }
@@ -33482,16 +33482,7 @@ md-checkbox.md-checked .md-icon {
   padding: 0;
 }
 .tabs-message .wrap-search-block .search-input-chat .md-input {
-  border-radius: 5px;
-  border: 1px solid #eeecec;
   padding: 0 5px 0 27px;
-  color: #989a9f;
-  font-weight: 400;
-  height: 33px;
-  font-size: 12px;
-}
-.tabs-message .wrap-search-block .search-input-chat .md-input::placeholder {
-  color: #989a9f;
 }
 .tabs-message .wrap-search-block .md-errors-spacer {
   height: 0;
@@ -33533,6 +33524,11 @@ md-checkbox.md-checked .md-icon {
 .tabs-message .bookmark-tab.selected .message-text {
   color: #ddd !important;
 }
+.tabs-message .bookmark-tab .svg-icon {
+  margin-right: 6px;
+  height: 24px;
+  width: 24px;
+}
 .tabs-message .bookmark-tab .bookmark-icon {
   fill: #d62516;
   margin-top: 6px;
@@ -33540,11 +33536,6 @@ md-checkbox.md-checked .md-icon {
 .tabs-message .message-icon {
   height: 20px;
   width: 20px;
-}
-.tabs-message .inbox-icon, .tabs-message .person-icon, .tabs-message .people-icon, .tabs-message .radio-icon, .tabs-message .direct-icon, .tabs-message .bookmark-icon {
-  height: 16px;
-  margin-right: 6px;
-  width: 16px;
 }
 .tabs-message .direct-icon {
   fill: green;
@@ -33635,6 +33626,11 @@ md-checkbox.md-checked .md-icon {
 .tabs-message .cp-Panels .menu-link {
   align-items: center;
   display: flex;
+}
+.tabs-message .cp-Panels .menu-link .svg-icon {
+  margin-right: 6px;
+  height: 24px;
+  width: 24px;
 }
 .tabs-message .cp-Panels .cp-Panel-toggle {
   padding: 0;
@@ -33778,7 +33774,7 @@ md-checkbox.md-checked .md-icon {
 .visitor-info .info-item, .team-info .info-item, .user-info .info-item {
   background-color: #fff;
   border: 2px solid #f5f5f5;
-  border-radius: 8px;
+  border-radius: 3px;
   padding: 5px 10px;
   margin-bottom: 10px;
 }
@@ -33959,6 +33955,7 @@ md-checkbox.md-checked .md-icon {
 }
 
 .message-section {
+  background-color: #f9fdff;
   flex: 1;
   display: flex;
   flex-direction: column;
