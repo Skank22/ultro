@@ -29209,6 +29209,9 @@ textarea,
   margin-right: 7px;
   vertical-align: middle;
 }
+.ember-power-select-dropdown .ember-power-select-option .bold {
+  font-weight: 700;
+}
 .ember-power-select-dropdown .ember-power-select-option .status {
   color: green;
   text-transform: capitalize;
@@ -29277,6 +29280,7 @@ md-input-container .md-input.ng-invalid.ng-dirty {
 }
 .form-group .label {
   color: #121416;
+  font-weight: 500;
   margin-bottom: 5px;
 }
 .form-group .extra-text {
@@ -31424,6 +31428,10 @@ span.DELETED {
 .permission-table th {
   text-transform: none;
 }
+.permission-table td:first-child {
+  color: #121416 !important;
+  font-weight: 500;
+}
 .permission-table thead tr th:not(:first-child), .permission-table tbody tr td:not(:first-child) {
   text-align: center;
 }
@@ -31540,6 +31548,12 @@ span.DELETED {
 .escalation-details .user-data > div {
   margin: 10px;
 }
+.user-details .user-data .form-group,
+.group-details .user-data .form-group,
+.company-details .user-data .form-group,
+.escalation-details .user-data .form-group {
+  margin-bottom: 5px;
+}
 .user-details .user-data .editable,
 .group-details .user-data .editable,
 .company-details .user-data .editable,
@@ -31581,6 +31595,7 @@ span.DELETED {
 .group-details .access-information h4,
 .company-details .access-information h4,
 .escalation-details .access-information h4 {
+  color: #121416;
   font-size: 14px;
   font-weight: 500;
   line-height: 24px;
@@ -31598,6 +31613,7 @@ span.DELETED {
 .group-details .access-information h5,
 .company-details .access-information h5,
 .escalation-details .access-information h5 {
+  color: #121416;
   font-size: 13px;
   font-weight: 700;
   margin-bottom: 7px;
@@ -31675,12 +31691,6 @@ span.DELETED {
 .company-details .cp-Panel-body .editable,
 .escalation-details .cp-Panel-body .editable {
   margin-left: 28px !important;
-}
-.user-details div.editable,
-.group-details div.editable,
-.company-details div.editable,
-.escalation-details div.editable {
-  padding-top: 12px;
 }
 .user-details .table-wrapper,
 .group-details .table-wrapper,
@@ -32327,6 +32337,9 @@ span.DELETED {
   display: flex;
   margin-top: 5px;
 }
+.field-creation .fields .list .item .details .choices .drag-item._new {
+  margin-left: 22px;
+}
 .field-creation .fields .list .item .details .choices .drag_handle {
   line-height: 30px;
 }
@@ -32682,6 +32695,9 @@ span.DELETED {
   height: 36px;
   margin-top: 20px;
 }
+.buttons-panel .action-buttons {
+  display: flex;
+}
 .buttons-panel .action-buttons svg {
   width: 20px;
   height: 20px;
@@ -32691,14 +32707,18 @@ span.DELETED {
   min-width: auto;
   margin-left: 0;
   margin-right: 15px;
+  pointer-events: none;
 }
 .buttons-panel .secondary-2-button.active, .buttons-panel .secondary-2-button.active:hover, .buttons-panel .primary-button.active, .buttons-panel .primary-button.active:hover {
-  background-color: #EFFAFF !important;
-  color: #306FC9 !important;
-  border-color: #306FC9 !important;
+  border-color: #306FC9;
+  color: #306FC9;
+  pointer-events: auto;
 }
 .buttons-panel .secondary-2-button.active svg, .buttons-panel .secondary-2-button.active:hover svg, .buttons-panel .primary-button.active svg, .buttons-panel .primary-button.active:hover svg {
   fill: #306FC9;
+}
+.buttons-panel .secondary-2-button.active:hover, .buttons-panel .primary-button.active:hover {
+  background-color: #effaff;
 }
 .buttons-panel .navigate-button {
   padding: 3px !important;
@@ -36192,6 +36212,9 @@ md-checkbox.md-checked .md-icon {
   flex: 1;
   margin-right: 10px;
   min-width: 27%;
+}
+.rulesWrapper .rule-item input::placeholder {
+  font-size: 15px;
 }
 .rulesWrapper:last-child .operator {
   display: none;
