@@ -33572,8 +33572,8 @@ md-checkbox.md-checked .md-icon {
   right: 5px;
 }
 .tabs-message .item-user-chat .chat-entry-icon, .tabs-message .item-user-chat .mentioned-icon {
-  height: 16px;
-  width: 16px;
+  height: 20px;
+  width: 20px;
   fill: #54a702;
 }
 .tabs-message .item-user-chat .mentioned-icon {
