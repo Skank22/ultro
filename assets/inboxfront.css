@@ -35786,10 +35786,9 @@ span.DELETED {
   padding: 6px 14px;
 }
 .user-profile .icon-bell {
-  height: 16px;
-  width: 16px;
+  height: 20px;
+  width: 20px;
   margin-right: 8px;
-  fill: #2B78E4;
 }
 .user-profile .label {
   color: #2B78E4;
@@ -39212,23 +39211,21 @@ md-checkbox.md-checked .md-icon {
 }
 .tabs-message .thread-item {
   border-top: 1px solid #eeecec;
+  border-left: none;
   padding: 5px 14px 7px;
   cursor: pointer;
+  transition: border-width 0.2s;
 }
 .tabs-message .thread-item.selected {
-  background: #1e20a8;
-  color: #fff;
-  /*background-color: #eee;
   color: #121416;
   border-left: 4px solid #1E20A8;
-  padding-left: 10px;*/
+  border-top: 1px solid rgba(101, 101, 101, 0.3);
 }
 .tabs-message .thread-item.selected .top_txt .guest-name {
-  color: #fff;
   font-weight: 700;
 }
 .tabs-message .thread-item.selected .message-text {
-  color: #ddd !important;
+  color: #121416 !important;
 }
 .tabs-message .thread-item:last-child {
   border-bottom: 1px solid #eeecec;
@@ -39312,9 +39309,6 @@ md-checkbox.md-checked .md-icon {
 }
 .tabs-message .cp-Panels .cp-Panel-toggle > .alignCenter {
   padding: 10px 12px;
-}
-.tabs-message .cp-Panels .cp-Panel-toggle .radio-icon, .tabs-message .cp-Panels .cp-Panel-toggle .direct-icon {
-  margin-right: 6px;
 }
 .tabs-message .cp-Panels .cp-Panel-toggle .md-button {
   height: 26px;
@@ -40839,16 +40833,16 @@ md-checkbox.md-checked .md-icon {
   margin: 0;
 }
 .contact-info .contact-info-item .info-icon {
-  height: 18px;
-  width: 18px;
-  vertical-align: middle;
-  margin-right: 5px;
+  height: 20px;
+  width: 20px;
+  margin-right: 8px;
 }
 .contact-info .contact-info-item .cp-Panel-toggle {
   background: #f5f5f5;
   margin: 0;
   padding: 12px;
-  position: relative;
+  align-items: center;
+  display: flex;
 }
 .contact-info .contact-info-item .cp-Panel-toggle .arrow-icon {
   height: 16px;
