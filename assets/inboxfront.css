@@ -34401,6 +34401,7 @@ table.md-table td.md-cell {
   margin-bottom: 8px;
 }
 .side-menu a .badge {
+  animation: opacity 2s infinite;
   background: #ff9900;
   border-radius: 50%;
   height: 6px;
@@ -34410,6 +34411,17 @@ table.md-table td.md-cell {
   width: 6px;
 }
 
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .apps-popup {
   background-color: #fff;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
@@ -35871,10 +35883,6 @@ span.DELETED {
   width: 245px;
 }
 
-.width-80 {
-  width: 80% !important;
-}
-
 .attachments {
   display: flex;
   flex-wrap: wrap;
@@ -35883,6 +35891,9 @@ span.DELETED {
   height: 20px !important;
   width: 20px !important;
   fill: #6198ff;
+}
+.attachments .trash-icon {
+  margin-left: 3px;
 }
 .attachments .md-button {
   min-width: auto;
@@ -35893,12 +35904,18 @@ span.DELETED {
   align-items: center;
   display: flex;
   width: 150px;
-  background-color: #f3f6f8;
+  background-color: #eee;
   margin: 0 5px 5px 0;
-  padding: 20px 5px;
+  padding: 5px;
 }
-.attachments .file .filename {
-  margin-left: 5px;
+.attachments .file a {
+  align-items: center;
+  display: flex;
+  margin-right: 5px;
+}
+.attachments img {
+  height: 35px;
+  width: fit-content;
 }
 
 .column-select {
@@ -35992,19 +36009,25 @@ span.DELETED {
   min-height: 0;
 }
 .tasks-list .grid-place .side-panel {
+  background-color: #f7f7f7;
+  box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  width: 30%;
+  margin: 5px;
   min-width: 30%;
   max-width: 30%;
-  background-color: #f7f7f7;
+  width: 30%;
 }
 .tasks-list .grid-place .side-panel.hidden {
   display: none;
 }
 .tasks-list .grid-place .side-panel .panel-header {
   text-transform: uppercase;
-  padding: 5px 0 20px 10px;
+  padding: 10px 0 10px 10px;
+  color: #4d4c4f;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #eee;
 }
 .tasks-list .grid-place .side-panel .panel-slug {
   padding: 10px;
@@ -36020,6 +36043,7 @@ span.DELETED {
 .tasks-list .grid-place .side-panel .panel-form .form-content {
   flex: 20;
   overflow: auto;
+  padding: 0 0 10px;
 }
 .tasks-list .grid-place .side-panel .panel-form .form-content .label .svg-icon {
   margin-right: 5px;
@@ -36039,6 +36063,15 @@ span.DELETED {
 }
 .tasks-list .grid-place .side-panel .panel-form .form-content input, .tasks-list .grid-place .side-panel .panel-form .form-content textarea, .tasks-list .grid-place .side-panel .panel-form .form-content .form-class, .tasks-list .grid-place .side-panel .panel-form .form-content .pell-content {
   background: #fff;
+}
+.tasks-list .grid-place .side-panel .panel-form .form-content .flatpickr-input {
+  min-height: 40px;
+  flex: 1;
+}
+.tasks-list .grid-place .side-panel .panel-form .form-content .icon-date {
+  height: 24px;
+  width: 24px;
+  margin-right: 8px;
 }
 .tasks-list .grid-place .side-panel .panel-form .form-footer {
   display: flex;
@@ -38549,6 +38582,10 @@ md-tabs .md-tab.md-focused {
 md-tabs .md-tab .md-ripple-container {
   display: none;
 }
+md-tabs .md-tab .svg-icon {
+  margin-right: 3px;
+  vertical-align: middle;
+}
 md-tabs .md-active {
   border-bottom: 2px solid #2b78e4;
   color: #2b78e4;
@@ -40421,6 +40458,11 @@ md-checkbox.md-checked .md-icon {
 .ecommerce-info .order-details .primary-button {
   margin-left: 10px;
 }
+.ecommerce-info .order-details .svg-icon {
+  height: 20px;
+  width: 20px;
+  margin-right: 3px;
+}
 .ecommerce-info .order-details .cp-Panel {
   border-top: solid 1px #DADADA;
   margin-top: 10px;
@@ -40445,6 +40487,9 @@ md-checkbox.md-checked .md-icon {
   border-bottom: solid 1px #DADADA;
   margin-top: 20px;
   padding-right: 10px;
+}
+.ecommerce-info .order-list .order-item .svg-icon {
+  margin-right: 5px;
 }
 .ecommerce-info .order-id {
   color: #007BFF;
@@ -40620,6 +40665,16 @@ md-checkbox.md-checked .md-icon {
   font-size: 13px;
   margin-left: 20px;
   color: #007BFF;
+}
+.cancel-order-sidenav .form-group .secondary-2-button,
+.refund-order-sidenav .form-group .secondary-2-button {
+  margin-left: 10px;
+}
+.cancel-order-sidenav .form-group .svg-icon,
+.refund-order-sidenav .form-group .svg-icon {
+  margin-right: 3px;
+  height: 20px;
+  width: 20px;
 }
 
 .braincheck-avatar {
@@ -43270,10 +43325,6 @@ md-checkbox.md-checked .md-icon {
   height: 28px;
   width: 28px;
 }
-.kb-inner-wrapper .page-title .md-icon-button .svg-icon {
-  width: 24px;
-  height: 24px;
-}
 .kb-inner-wrapper .svg-icon.icon-sections {
   fill: green;
 }
@@ -43447,6 +43498,14 @@ md-checkbox.md-checked .md-icon {
   margin: 15px 0 0;
   display: flex;
   justify-content: space-between;
+}
+.kb-inner-wrapper .section-editor .section-body .wrap-arrows {
+  margin: 10px 10px 0;
+}
+.kb-inner-wrapper .section-editor .section-body .wrap-arrows .svg-icon {
+  transform: rotate(90deg);
+  height: 24px;
+  width: 24px;
 }
 .kb-inner-wrapper .section-editor .section-body .banner {
   display: flex;
