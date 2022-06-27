@@ -26292,7 +26292,7 @@ md-step-body {
   margin-right: 12px;
 }
 .dashboard-top .ember-power-select-trigger {
-  min-width: 160px;
+  min-width: 180px;
 }
 .dashboard-top .dates-selector-wrapper {
   align-items: center;
@@ -34699,6 +34699,10 @@ textarea:focus,
   border-color: #2B78E4 !important;
 }
 
+.ember-power-select-group-name {
+  display: block;
+}
+
 .ember-power-select-trigger {
   border-color: #EEECEC !important;
   border-radius: 5px !important;
@@ -34850,6 +34854,11 @@ md-input-container .md-input.ng-invalid.ng-dirty {
   font-weight: 500;
   margin-bottom: 5px;
 }
+.form-group .title-icon {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+}
 .form-group .extra-text {
   font-size: 12px;
   margin-top: 4px;
@@ -35000,6 +35009,13 @@ table.md-table tbody tr td .md-button {
 
 .admin-table.loading {
   opacity: 0.2;
+}
+.admin-table._fixed table {
+  table-layout: fixed;
+}
+.admin-table._fixed table td {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .admin-table table thead th {
   text-transform: none !important;
@@ -36222,6 +36238,19 @@ span.DELETED {
   width: 16px;
   height: 16px;
   vertical-align: middle;
+}
+.create-contact-field-popup .form-group .flatpickr-input,
+.task-form .form-group .flatpickr-input,
+.panel-form .form-group .flatpickr-input {
+  min-height: 40px;
+  flex: 1;
+}
+.create-contact-field-popup .form-group .icon-date,
+.task-form .form-group .icon-date,
+.panel-form .form-group .icon-date {
+  height: 24px;
+  width: 24px;
+  margin-right: 8px;
 }
 .create-contact-field-popup .col-sm-6,
 .task-form .col-sm-6,
@@ -37898,6 +37927,7 @@ span.DELETED {
 }
 .field-creation .fields .list .item {
   border: solid 2px #dadada;
+  border-radius: 4px;
   margin-bottom: 5px;
 }
 .field-creation .fields .list .item.blur > .field-header {
@@ -38110,6 +38140,7 @@ span.DELETED {
   position: relative;
   background-color: #fff;
   border: solid 2px #d4d4d4;
+  border-radius: 4px;
   margin: 5px;
   cursor: pointer;
 }
@@ -39567,9 +39598,8 @@ md-checkbox.md-checked .md-icon {
   display: block;
 }
 .visitor-info .list-member .item-member .name, .team-info .list-member .item-member .name, .user-info .list-member .item-member .name {
-  font-weight: 400;
-  font-size: 12px;
-  color: #000;
+  font-size: 15px;
+  color: #121416;
 }
 .visitor-info .list-member .item-member .md-avatar, .team-info .list-member .item-member .md-avatar, .user-info .list-member .item-member .md-avatar {
   margin-right: 2px;
@@ -39584,6 +39614,16 @@ md-checkbox.md-checked .md-icon {
 }
 .visitor-info .info-item .liquid-container, .visitor-info .info-item .liquid-child, .team-info .info-item .liquid-container, .team-info .info-item .liquid-child, .user-info .info-item .liquid-container, .user-info .info-item .liquid-child {
   overflow: visible;
+}
+.visitor-info .info-item .title-icon, .team-info .info-item .title-icon, .user-info .info-item .title-icon {
+  margin-right: 7px;
+  height: 20px;
+  width: 20px;
+}
+.visitor-info .info-item .title-info, .team-info .info-item .title-info, .user-info .info-item .title-info {
+  color: #121416;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
 .visitor-info .info-item .profile-icon, .team-info .info-item .profile-icon, .user-info .info-item .profile-icon {
   fill: #989a9f !important;
@@ -39772,7 +39812,12 @@ md-checkbox.md-checked .md-icon {
   font-weight: 500;
   font-size: 16px;
   color: #231f20;
+  display: flex;
+  align-items: center;
   position: relative;
+}
+.message-section .bookmark-icon {
+  margin-right: 8px;
 }
 .message-section .typing-text {
   color: #989a9f;
@@ -39858,14 +39903,14 @@ md-checkbox.md-checked .md-icon {
   height: 24px;
   width: 24px;
 }
-.message-section .message-section-title .checkmark-icon, .message-section .message-section-title .swap-icon, .message-section .message-section-title .delete-icon, .message-section .message-section-title .info-icon {
+.message-section .message-section-title .svg-icon {
   height: 24px;
   width: 24px;
 }
-.message-section .message-section-title .checkmark-icon.opened, .message-section .message-section-title .swap-icon.opened, .message-section .message-section-title .delete-icon.opened, .message-section .message-section-title .info-icon.opened {
+.message-section .message-section-title .svg-icon.opened {
   fill: #2B78E4;
 }
-.message-section .message-section-title .checkmark-icon:hover, .message-section .message-section-title .swap-icon:hover, .message-section .message-section-title .delete-icon:hover, .message-section .message-section-title .info-icon:hover {
+.message-section .message-section-title .svg-icon:hover {
   fill: #2b78e4;
 }
 .message-section .message-section-title .whosread > span {
@@ -39924,15 +39969,21 @@ md-checkbox.md-checked .md-icon {
 }
 .messages .bookmark-banner {
   margin: 10px;
-  padding: 10px 20px;
+  padding: 10px;
   border: solid 1px #ececec;
   border-radius: 10px;
   background-color: #DFEBFD;
   color: #231F20;
+  display: flex;
 }
 .messages .bookmark-banner b {
   display: block;
   margin-bottom: 10px;
+}
+.messages .bookmark-banner .svg-icon {
+  margin-right: 10px;
+  height: 20px;
+  width: 20px;
 }
 .messages .bookmark {
   margin: 10px;
@@ -40257,21 +40308,21 @@ md-checkbox.md-checked .md-icon {
   height: 21px;
   width: 21px;
 }
+.messages .msg .pin {
+  font-size: 11px;
+  margin: 0 0 7px 55px;
+}
+.messages .msg .office-pin-icon {
+  height: 12px;
+  margin-right: 2px;
+  vertical-align: middle;
+  width: 11px;
+}
 .messages .msg .message {
   display: flex;
 }
 .messages .msg .message .md-avatar {
   margin-right: 20px;
-}
-.messages .msg .message .pin {
-  font-size: 11px;
-  margin-bottom: 7px;
-}
-.messages .msg .message .office-pin-icon {
-  height: 12px;
-  margin-right: 2px;
-  vertical-align: middle;
-  width: 11px;
 }
 .messages .msg .message .reply-in-thread-info {
   cursor: pointer;
@@ -40936,10 +40987,34 @@ md-checkbox.md-checked .md-icon {
   margin-bottom: 7px;
   padding: 10px 0;
   text-align: center;
+  position: relative;
+}
+.contact-info .contact-avatar:after {
+  background-image: url("/assets/back-user.jpg");
+  background-position: center;
+  background-size: cover;
+  content: "";
+  height: 100%;
+  width: 100%;
+  opacity: 0.6;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 .contact-info .contact-avatar .contact-info-name {
+  color: #121416;
   font-size: 13px;
   font-weight: 500;
+}
+.contact-info .contact-avatar .profile_upload {
+  position: relative;
+  z-index: 1;
+}
+.contact-info .contact-avatar .profile_upload small {
+  color: #121416;
+}
+.contact-info .contact-avatar .avatar-upload {
+  background: none;
 }
 .contact-info .md-button:hover {
   background: none;
@@ -43008,6 +43083,17 @@ md-checkbox.md-checked .md-icon {
     opacity: 0;
   }
 }
+.ecommerce-title {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+.ecommerce-title .svg-icon {
+  margin-right: 8px;
+  height: 22px;
+  width: 22px;
+}
+
 .ecommerce-tab {
   padding: 15px;
   border-radius: 7px;
@@ -43015,12 +43101,7 @@ md-checkbox.md-checked .md-icon {
   border: 1px solid rgba(51, 51, 51, 0.1);
   transition: all 0.25s ease;
   width: 300px;
-  min-width: 300px;
-  max-width: 300px;
-  margin-left: 10px;
-  margin-top: 10px;
-  margin-bottom: 15px;
-  margin-right: 15px;
+  margin: 10px 15px 15px 10px;
   cursor: pointer;
 }
 .ecommerce-tab:hover {
@@ -44692,6 +44773,9 @@ a.primary-2-button {
 }
 .popup md-content {
   overflow: visible;
+  padding: 0;
+  margin: 0 45px;
+  flex: 1;
 }
 .popup form {
   display: flex;
@@ -44699,11 +44783,6 @@ a.primary-2-button {
   height: 100%;
   position: relative;
   margin-top: 16px;
-}
-.popup form md-content {
-  padding: 0;
-  margin: 0 45px;
-  flex: 1;
 }
 .popup.small {
   width: 30%;
