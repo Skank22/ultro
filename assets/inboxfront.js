@@ -10072,7 +10072,7 @@
 
   _exports.default = _default;
 });
-;define("inboxfront/components/popups/emoji-picker", ["exports", "inboxfront/utils/emojis"], function (_exports, _emojis) {
+;define("inboxfront/components/popups/emoji-picker", ["exports"], function (_exports) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
@@ -10168,8 +10168,8 @@
 
               case 7:
                 data = _context.sent;
-                console.log(data);
 
+                //console.log(data);
                 _this.set('collectEmojis', data);
 
                 filterObj = Object.values(data.emojis);
@@ -10185,12 +10185,11 @@
                     y: (100 / 60 * skin.y).toFixed(4) + '%'
                   };
                 });
-                console.log(newArr);
 
                 _this.set('emojis', newArr); //this.set('emojis', this.get('emoji').peopleGroup);
 
 
-              case 14:
+              case 12:
               case "end":
                 return _context.stop();
             }

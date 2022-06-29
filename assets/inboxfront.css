@@ -40484,22 +40484,15 @@ md-checkbox.md-checked .md-icon {
   height: 240px;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
-  padding: 5px 10px;
+  padding: 5px;
   overflow: auto;
 }
 .picker-popup-wrapper .emojis-list > div {
-  /*height: 25px;
-  width: 25px;
-  margin: 5px;
-  font-size: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;*/
   background-image: url("https://cdn.jsdelivr.net/npm/emoji-datasource-apple@14.0.0/img/apple/sheets-256/64.png");
   cursor: pointer;
   width: 24px;
   height: 24px;
+  margin: 1px;
   background-size: 6100% 6100%;
   /*image-rendering: optimizeQuality;
   height: 24px;
