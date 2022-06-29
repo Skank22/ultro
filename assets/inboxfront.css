@@ -34845,8 +34845,8 @@ md-input-container .md-input.ng-invalid.ng-dirty {
 .form-group label .svg-icon,
 .form-group .label .svg-icon,
 .form-group span .svg-icon {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   vertical-align: middle;
 }
 .form-group .label {
@@ -35173,6 +35173,10 @@ span.DELETED {
   width: 20px;
   height: 20px;
   margin-right: 5px;
+}
+.administration-menu .svg-icon.marketplace-icon {
+  width: 24px;
+  height: 24px;
 }
 .administration-menu .menu-link {
   font-weight: 500;
@@ -36235,8 +36239,8 @@ span.DELETED {
 .create-contact-field-popup .form-group label svg,
 .task-form .form-group label svg,
 .panel-form .form-group label svg {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   vertical-align: middle;
 }
 .create-contact-field-popup .form-group .flatpickr-input,
@@ -37199,7 +37203,7 @@ span.DELETED {
 .group-details .user-data .editable,
 .company-details .user-data .editable,
 .escalation-details .user-data .editable {
-  margin-left: 30px;
+  margin-left: 34px;
 }
 .user-details .user-data .reset-pass-action,
 .group-details .user-data .reset-pass-action,
@@ -37940,10 +37944,14 @@ span.DELETED {
 .field-creation .fields .list .item.blur .actions {
   display: none !important;
 }
+.field-creation .fields .list .item .item {
+  margin: 5px;
+}
 .field-creation .fields .list .item .group-subfield-list .field-header .drag-indicator {
   display: none;
 }
 .field-creation .fields .list .item .field-header {
+  align-items: center;
   min-height: 40px;
 }
 .field-creation .fields .list .item .field-header:hover .actions {
@@ -38142,18 +38150,19 @@ span.DELETED {
   border: solid 2px #d4d4d4;
   border-radius: 4px;
   margin: 5px;
+  padding: 2px;
   cursor: pointer;
 }
 .field-creation .field-types .types-list .item .type-title {
   flex: 20;
+  margin-left: 4px;
 }
 .field-creation .field-types .types-list .item .type-title .label {
   color: #606a73;
-  padding: 2px;
 }
 .field-creation .field-types .types-list .item .type-title .description {
   color: #d4d4d4;
-  padding: 2px;
+  margin: 4px 0 0;
 }
 .field-creation .field-types .types-list .item .actions {
   position: absolute;
@@ -39285,15 +39294,15 @@ md-checkbox.md-checked .md-icon {
   transition: border-width 0.2s;
 }
 .tabs-message .thread-item.selected {
-  color: #121416;
-  border-left: 4px solid #1E20A8;
-  border-top: 1px solid rgba(101, 101, 101, 0.3);
+  background-color: #1e20a8;
+  color: #fff;
 }
 .tabs-message .thread-item.selected .top_txt .guest-name {
+  color: #fff;
   font-weight: 700;
 }
 .tabs-message .thread-item.selected .message-text {
-  color: #121416 !important;
+  color: #ddd !important;
 }
 .tabs-message .thread-item:last-child {
   border-bottom: 1px solid #eeecec;
@@ -39352,6 +39361,7 @@ md-checkbox.md-checked .md-icon {
   height: 10px;
   margin: 18px 8px 0 -7px;
   width: 10px;
+  z-index: 1;
 }
 .tabs-message .item-user-chat .icon-status-user.online {
   background: #54a702;
@@ -39752,6 +39762,10 @@ md-checkbox.md-checked .md-icon {
   text-align: center;
   font-weight: 500;
   margin-bottom: 12px;
+}
+.visitor-info .visitor-avatar .braincheck-avatar, .team-info .visitor-avatar .braincheck-avatar, .user-info .visitor-avatar .braincheck-avatar {
+  width: 28px;
+  margin: auto;
 }
 .visitor-info .cp-Panel-body-inner, .team-info .cp-Panel-body-inner, .user-info .cp-Panel-body-inner {
   margin-top: 10px;
@@ -40440,7 +40454,7 @@ md-checkbox.md-checked .md-icon {
   padding-bottom: 5px;
   position: absolute;
   right: 0;
-  width: 240px;
+  width: 280px;
   z-index: 1000;
 }
 .picker-popup-wrapper.inline {
@@ -40467,20 +40481,33 @@ md-checkbox.md-checked .md-icon {
   width: 24px;
 }
 .picker-popup-wrapper .emojis-list {
-  height: 210px;
+  height: 240px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
   padding: 5px 10px;
   overflow: auto;
 }
 .picker-popup-wrapper .emojis-list > div {
-  background-repeat: no-repeat;
+  /*height: 25px;
+  width: 25px;
+  margin: 5px;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;*/
+  background-image: url("https://cdn.jsdelivr.net/npm/emoji-datasource-apple@14.0.0/img/apple/sheets-256/64.png");
   cursor: pointer;
-  image-rendering: optimizeQuality;
+  width: 24px;
+  height: 24px;
+  background-size: 6100% 6100%;
+  /*image-rendering: optimizeQuality;
   height: 24px;
   display: inline-block;
   padding: 5px;
   text-indent: -9999em;
   width: 24px;
-  transform: scale(1);
+  transform: scale(1);*/
 }
 .picker-popup-wrapper .emojis-list > div:hover {
   transform: scale(1.15);
@@ -40729,8 +40756,21 @@ md-checkbox.md-checked .md-icon {
 }
 
 .braincheck-avatar {
-  width: 35px !important;
-  height: 35px !important;
+  position: relative;
+}
+.braincheck-avatar:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #121416;
+}
+.braincheck-avatar .svg-icon {
+  width: 28px !important;
+  height: 28px !important;
 }
 
 .star-switch h4 {
@@ -41013,7 +41053,7 @@ md-checkbox.md-checked .md-icon {
 .contact-info .contact-avatar .profile_upload small {
   color: #121416;
 }
-.contact-info .contact-avatar .avatar-upload {
+.contact-info .contact-avatar .avatar-upload.uploaded {
   background: none;
 }
 .contact-info .md-button:hover {
@@ -41145,9 +41185,9 @@ md-checkbox.md-checked .md-icon {
   padding: 0 10px;
 }
 .contact-content .form-create-note .form-note-title .file-icon {
-  height: 24px;
-  margin-right: 5px;
-  width: 24px;
+  height: 20px;
+  margin-right: 8px;
+  width: 20px;
 }
 .contact-content .form-create-note .form-note-title .md-input {
   border: none !important;
