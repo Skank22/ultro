@@ -34304,8 +34304,9 @@
             }
           });
 
-          _this.set('rooms', rooms); //this.initSockets(rooms);
+          _this.set('rooms', rooms);
 
+          _this.initSockets(rooms);
         });
       });
       this.loadBookmarks();
