@@ -34501,6 +34501,8 @@
           throw Error('error parse');
         }
 
+        console.log('packet', packet);
+
         switch (packet.type) {
           case 'online':
           case 'offline':
@@ -34570,9 +34572,9 @@
         _this6.get('sockets').removeObject(filterSocket);
 
         _this6.get('socketsByRoomId')[room.id] = false;
-        setTimeout(function () {
-          _this6.load();
-        }, 5000);
+        /*setTimeout(() => {
+            this.load();
+        }, 5000);*/
       };
 
       ws.onerror = function (err) {
